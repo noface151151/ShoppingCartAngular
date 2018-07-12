@@ -2,8 +2,8 @@
   <div class="row">
       <app-products></app-products>
   <div>
-  <div class="row">
-    <app-shoppingcarts></app-shoppingcarts>
+  <div class="row" *ngIf="shoppingCarts && shoppingCarts.length >0">
+    <app-shoppingcarts [shoppingCarts]="shoppingCarts" [sumPrice]="sumPrice"></app-shoppingcarts>
   </div>
 
 </div>

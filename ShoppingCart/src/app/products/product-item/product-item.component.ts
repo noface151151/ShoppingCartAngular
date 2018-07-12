@@ -1,7 +1,7 @@
 import { ShoppingCart } from './../../shared/shoppingcart.model';
 import { ShoppingcartService } from './../../shared/shoppingcart.service';
 import { Product } from './../../shared/product.model';
-import { Component, OnInit,Input } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 
 @Component({
@@ -11,13 +11,13 @@ import { Component, OnInit,Input } from '@angular/core';
 })
 export class ProductItemComponent implements OnInit {
 
-  @Input() product: Product
-  constructor(private shoppingCartService:ShoppingcartService) { }
+  @Input() product: Product;
+  constructor(private shoppingCartService: ShoppingcartService) { }
 
   ngOnInit() {
   }
-  onAddShoppingCart(product:Product){
-    const shoppingCart=new ShoppingCart(product.productName,1,product.productPrice,product.imageLink);
+  onAddShoppingCart(product: Product) {
+    const shoppingCart = new ShoppingCart(product.productName, 1, product.productPrice, product.imageLink);
     this.shoppingCartService.addShoppingCart(shoppingCart);
   }
 }
